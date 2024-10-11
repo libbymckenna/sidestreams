@@ -22,10 +22,11 @@ jobs:
         with:
           r-version: '4.4.0'
 
-      - name: Install R Dependencies
-        uses: r-lib/actions/setup-renv@v2
+      - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          cache-version: 1
+          packages: |
+            any::rmarkdown
+            any::tidyverse
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
