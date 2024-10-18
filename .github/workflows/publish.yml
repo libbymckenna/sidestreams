@@ -22,7 +22,8 @@ jobs:
         with:
           r-version: '4.4.0'
 
-      - uses: r-lib/actions/setup-r-dependencies@v2
+      -	name: Install R Dependencies
+	uses: r-lib/actions/setup-r-dependencies@v2
         with:
           packages: |
             any::rmarkdown
