@@ -27,6 +27,7 @@ jobs:
           Rscript -e "install.packages('yaml')"
           Rscript -e "install.packages('rmarkdown')"
           Rscript -e "install.packages('knitr')"
+          Rscript -e "install.packages('tidywater')"
 
       - name: Install R Dependencies
         uses: r-lib/actions/setup-renv@v2
