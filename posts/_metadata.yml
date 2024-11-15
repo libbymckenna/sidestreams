@@ -1,4 +1,8 @@
 # options specified here will apply to all posts in this folder
+# list all the posts in the posts folder and sort them by date in descending order
+listing:
+  contents: posts
+  sort: "date desc"
 
 # freeze computational output
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)

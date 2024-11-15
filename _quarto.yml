@@ -2,12 +2,15 @@ project:
   type: website
 
 website:
-  title: "sidestreams"
+  title: "Your Blog Title"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: "Home"
+        href: index.qmd
+      - text: "About"
+        href: about.qmd
+      - text: "Posts"
+        href: posts/index.qmd
 
 format:
   html:
