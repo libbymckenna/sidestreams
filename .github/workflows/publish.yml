@@ -24,9 +24,9 @@ jobs:
 
       - name: Install Required R Packages
         run: |
-          install.packages('yaml')
-          install.packages('rmarkdown')
-          install.packages('knitr')
+          Rscript -e "install.packages('yaml')"
+          Rscript -e "install.packages('rmarkdown')"
+          Rscript -e "install.packages('knitr')"
 
       - name: Install R Dependencies
         uses: r-lib/actions/setup-renv@v2
