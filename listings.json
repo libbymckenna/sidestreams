@@ -4,17 +4,22 @@
     "items": []
   },
   {
-    "listing": "/posts/post-with-code/index.html",
+    "listing": "/posts/haunted-water/index.html",
     "items": []
   },
   {
     "listing": "/index.html",
     "items": [
+      "/posts/index.html",
       "/posts/welcome/index.html"
     ]
   },
   {
-    "listing": "/posts/haunted-water/index.html",
+    "listing": "/posts/post-with-code/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/index.html",
     "items": []
   }
 ]
