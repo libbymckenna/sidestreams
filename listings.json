@@ -1,0 +1,20 @@
+[
+  {
+    "listing": "/posts/welcome/index.html",
+    "items": []
+  },
+  {
+    "listing": "/posts/post-with-code/index.html",
+    "items": []
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/welcome/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/haunted-water/index.html",
+    "items": []
+  }
+]
