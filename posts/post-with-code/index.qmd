@@ -1,0 +1,20 @@
+---
+title: "Three ways to find out if your water is haunted"
+subtitle: "by challenging organics"
+author: "Sierra Johnson"
+date: "2024-08-25"
+categories: [toc, treatment]
+image: "image.jpg"
+draft: true
+---
+
+This is a post with executable code.
+
+```{r}
+#| label: load-packages
+#| include: false
+#| echo: false
+
+library(tidywater)
+library(tidyverse)
+```
