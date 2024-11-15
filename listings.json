@@ -10,7 +10,6 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/index.html",
       "/posts/welcome/index.html"
     ]
   },
@@ -20,6 +19,8 @@
   },
   {
     "listing": "/posts/index.html",
-    "items": []
+    "items": [
+      "/posts/welcome/index.html"
+    ]
   }
 ]
