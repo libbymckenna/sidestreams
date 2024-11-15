@@ -1,11 +1,11 @@
 ---
-title: "Three ways to find out if your water is haunted"
+title: "Making posts work"
 subtitle: "by challenging organics"
-author: "Sierra Johnson"
+author: "Libby"
 date: "2024-08-25"
 categories: [toc, treatment]
 image: "image.jpg"
-draft: true
+
 ---
 
 This is a post with executable code.
