@@ -1,9 +1,9 @@
 ---
 title: "Making posts work"
-subtitle: "by challenging organics"
-author: "Libby"
+subtitle: "fiddling around with ymls"
+author: "Libby McKenna"
 date: "2024-08-25"
-categories: [toc, treatment]
+categories: [quarto_blog]
 image: "image.jpg"
 
 ---

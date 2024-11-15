@@ -1,6 +1,6 @@
 ---
-title: "Three ways to find out if your water is haunted"
-subtitle: "by challenging organics"
+title: "Three ways to find out if your water is haunted..."
+subtitle: "...by challenging organics"
 author: "Sierra Johnson"
 date: "2024-08-25"
 categories: [toc, treatment]
@@ -12,7 +12,7 @@ image: "image.jpg"
 #| include: false
 #| echo: false
 
-# library(tidywater)
+library(tidywater)
 library(tidyverse)
 
 ```
@@ -40,10 +40,10 @@ We'll start by looking at these functions for one condition. We'll begin by defi
 
 ```{r}
 
-# start_water <- define_water(ph = 7.4, temp = 12, alk = 80, tds = 100,
-#                           toc = 3, doc = 2.8, uv254 = .1, br = 50)
-# 
-# summarize_wq(start_water, params = c("general"))
+start_water <- define_water(ph = 7.4, temp = 12, alk = 80, tds = 100,
+                          toc = 3, doc = 2.8, uv254 = .1, br = 50)
+
+summarize_wq(start_water, params = c("general"))
 ```
 
 The two functions we'll be using today are:
@@ -56,16 +56,16 @@ We also use `chemdose_ph` to account for pH changes from chemical addition. Ofte
 
 ```{r}
 
-# coag_water <- start_water %>%
-#   chemdose_ph(alum = 30) %>%
-#   chemdose_toc(alum = 30)
+coag_water <- start_water %>%
+  chemdose_ph(alum = 30) %>%
+  chemdose_toc(alum = 30)
 
-# fin_water <- coag_water %>%
-#   chemdose_ph(naocl = 4) %>%
-#   chemdose_dbp(cl2 = 2, time = 2, treatment = "coag")
+fin_water <- coag_water %>%
+  chemdose_ph(naocl = 4) %>%
+  chemdose_dbp(cl2 = 2, time = 2, treatment = "coag")
 
-# print(paste("Coag DOC =", round(coag_water@doc, 1), "mg/L"))
-# print(paste("TTHM =", round(fin_water@tthm), "ug/L"))
+print(paste("Coag DOC =", round(coag_water@doc, 1), "mg/L"))
+print(paste("TTHM =", round(fin_water@tthm), "ug/L"))
 
 ```
 
@@ -85,28 +85,20 @@ coag_model <- hist_data %>%
          ph = coag_ph,
          alum = alum_dose) %>%
   mutate(suva_raw = 2,
-         uv254 = suva_raw / 100 * doc) #%>%
-  # define_water_chain("precoag") %>%
-  # chemdose_toc_chain("precoag", "coag") %>%
-  # # Pull out parameters of interest
-  # pluck_water("coag", "doc")
+         uv254 = suva_raw / 100 * doc) %>%
+  define_water_chain("precoag") %>%
+  chemdose_toc_chain("precoag", "coag") %>%
+  # Pull out parameters of interest
+  pluck_water("coag", "doc")
 
 # Plot actual vs modeled coagulated DOC
-#this is a fake plot placeholder until tidywater is on CRAN. replace with commented out plot below when tidywater is a real boy
-ggplot(coag_model, aes(x = ph, y = doc)) +
+
+ggplot(coag_model, aes(x = fin_toc, y = coag_doc)) +
   geom_point() +
   geom_abline() +
   coord_cartesian(xlim = c(0, NA), ylim = c(0, NA)) +
   theme_bw() +
   labs(x = "Actual TOC", y = "Modeled TOC")
-
-
-# ggplot(coag_model, aes(x = fin_toc, y = coag_doc)) +
-#   geom_point() +
-#   geom_abline() +
-#   coord_cartesian(xlim = c(0, NA), ylim = c(0, NA)) +
-#   theme_bw() +
-#   labs(x = "Actual TOC", y = "Modeled TOC")
 
 ```
 
