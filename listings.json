@@ -4,28 +4,19 @@
     "items": []
   },
   {
-    "listing": "/posts/haunted-water/index.html",
+    "listing": "/posts/intro-vignette/index.html",
     "items": []
   },
   {
     "listing": "/index.html",
     "items": [
-      "/posts/index.html",
-      "/posts/post-with-code/index.html",
+      "/posts/intro-vignette/index.html",
       "/posts/haunted-water/index.html",
       "/posts/welcome/index.html"
     ]
   },
   {
-    "listing": "/posts/post-with-code/index.html",
+    "listing": "/posts/haunted-water/index.html",
     "items": []
-  },
-  {
-    "listing": "/posts/index.html",
-    "items": [
-      "/posts/haunted-water/index.html",
-      "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html"
-    ]
   }
 ]
