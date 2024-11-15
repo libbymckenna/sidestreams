@@ -1,0 +1,7 @@
+---
+title: "All Posts"
+listing:
+  contents: posts
+  sort: "date desc"
+---
+This should list all posts.
