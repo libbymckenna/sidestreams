@@ -4,7 +4,7 @@ subtitle: "...by challenging organics"
 author: "Sierra Johnson"
 date: "2024-08-25"
 categories: [toc, treatment]
-image: "image.jpg"
+image: "haunted_water.png"
 ---
 
 ```{r}

@@ -1,6 +1,0 @@
----
-title: "All Posts"
-listing:
-  contents: "**/*/index.qmd"
-  sort: "date desc"
----
