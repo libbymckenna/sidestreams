@@ -1,7 +1,7 @@
 ---
 title: "All Posts"
 listing:
-  contents: posts
+  contents: "**/*/index.qmd"
   sort: "date desc"
 ---
 This should list all posts.

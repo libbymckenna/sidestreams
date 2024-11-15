@@ -1,7 +1,7 @@
 ---
 title: "sidestreams"
 listing:
-  contents: posts
+  contents: "posts/welcome/index.qmd"
   sort: "date desc"
   type: default
   categories: true
