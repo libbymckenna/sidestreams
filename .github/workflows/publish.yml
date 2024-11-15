@@ -17,6 +17,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Cache R packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.R
+          key: ${{ runner.os }}-r-${{ hashFiles('**/*.R') }}
+          restore-keys: |
+            ${{ runner.os }}-r-
+
       - name: Install System Dependencies
         run: |
           sudo apt-get update
@@ -34,31 +42,6 @@ jobs:
           Rscript -e "install.packages('knitr')"
           Rscript -e "install.packages('tidywater')"
           Rscript -e "install.packages('tidyverse')"
-          Rscript -e "install.packages('curl')"
-          Rscript -e "install.packages('base64enc')"
-          Rscript -e "install.packages('bslib')"
-          Rscript -e "install.packages('cachem')"
-          Rscript -e "install.packages('cli')"
-          Rscript -e "install.packages('digest')"
-          Rscript -e "install.packages('evaluate')"
-          Rscript -e "install.packages('fastmap')"
-          Rscript -e "install.packages('fontawesome')"
-          Rscript -e "install.packages('fs')"
-          Rscript -e "install.packages('glue')"
-          Rscript -e "install.packages('highr')"
-          Rscript -e "install.packages('htmltools')"
-          Rscript -e "install.packages('jquerylib')"
-          Rscript -e "install.packages('jsonlite')"
-          Rscript -e "install.packages('lifecycle')"
-          Rscript -e "install.packages('memoise')"
-          Rscript -e "install.packages('mime')"
-          Rscript -e "install.packages('R6')"
-          Rscript -e "install.packages('rappdirs')"
-          Rscript -e "install.packages('rlang')"
-          Rscript -e "install.packages('sass')"
-          Rscript -e "install.packages('tinytex')"
-          Rscript -e "install.packages('textshaping')"
-          Rscript -e "install.packages('xfun')"
 
       - name: Install R Dependencies
         uses: r-lib/actions/setup-renv@v2
