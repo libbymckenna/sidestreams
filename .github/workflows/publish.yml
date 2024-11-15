@@ -25,7 +25,7 @@ jobs:
       - name: Install R Dependencies
         uses: r-lib/actions/setup-renv@v2
         with:
-          packages: |
+          extra-packages: |
             any::rmarkdown
             any::tidyverse
 	    any::tidywater
