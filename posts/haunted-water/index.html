@@ -9,7 +9,7 @@
 <meta name="author" content="Sierra Johnson">
 <meta name="dcterms.date" content="2024-08-25">
 
-<title>Three ways to find out if your water is haunted – Your Blog Title</title>
+<title>Three ways to find out if your water is haunted… – Your Blog Title</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -207,8 +207,8 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Three ways to find out if your water is haunted</h1>
-            <p class="subtitle lead">by challenging organics</p>
+      <h1 class="title">Three ways to find out if your water is haunted…</h1>
+            <p class="subtitle lead">…by challenging organics</p>
                                 <div class="quarto-categories">
                 <div class="quarto-category">toc</div>
                 <div class="quarto-category">treatment</div>
@@ -254,10 +254,66 @@ window.Quarto = {
 <p>This description assumes you already have a basic knowledge of <code>tidywater</code>. If you don’t know how to create a <code>water</code> or how to connect functions togethers, start with the “getting started” <a href="github.com/BrownandCaldwell/tidywater">vignette</a>.</p>
 <p>We’ll start by looking at these functions for one condition. We’ll begin by defining a <code>water</code> that has all the parameters we need for modeling.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># start_water &lt;- define_water(ph = 7.4, temp = 12, alk = 80, tds = 100,</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#                           toc = 3, doc = 2.8, uv254 = .1, br = 50)</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># summarize_wq(start_water, params = c("general"))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>start_water <span class="ot">&lt;-</span> <span class="fu">define_water</span>(<span class="at">ph =</span> <span class="fl">7.4</span>, <span class="at">temp =</span> <span class="dv">12</span>, <span class="at">alk =</span> <span class="dv">80</span>, <span class="at">tds =</span> <span class="dv">100</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">toc =</span> <span class="dv">3</span>, <span class="at">doc =</span> <span class="fl">2.8</span>, <span class="at">uv254 =</span> .<span class="dv">1</span>, <span class="at">br =</span> <span class="dv">50</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize_wq</span>(start_water, <span class="at">params =</span> <span class="fu">c</span>(<span class="st">"general"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="kable_wrapper">
+<tbody>
+<tr>
+<td>
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">General water quality parameters</th>
+<th style="text-align: right;">Result</th>
+<th style="text-align: left;">Units</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">pH</td>
+<td style="text-align: right;">7.40</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Temp</td>
+<td style="text-align: right;">12.00</td>
+<td style="text-align: left;">deg C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Alkalinity</td>
+<td style="text-align: right;">80.00</td>
+<td style="text-align: left;">mg/L as CaCO3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total_Hardness</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">mg/L as CaCO3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TDS</td>
+<td style="text-align: right;">100.00</td>
+<td style="text-align: left;">mg/L</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Conductivity</td>
+<td style="text-align: right;">156.25</td>
+<td style="text-align: left;">uS/cm</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TOC</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: left;">mg/L</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <p>The two functions we’ll be using today are:</p>
 <ul>
@@ -266,46 +322,66 @@ window.Quarto = {
 </ul>
 <p>We also use <code>chemdose_ph</code> to account for pH changes from chemical addition. Often, we don’t need this function when we’re dealing with historical data because we have real measured pH at different points in the treatment process.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># coag_water &lt;- start_water %&gt;%</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   chemdose_ph(alum = 30) %&gt;%</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   chemdose_toc(alum = 30)</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>coag_water <span class="ot">&lt;-</span> start_water <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">chemdose_ph</span>(<span class="at">alum =</span> <span class="dv">30</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">chemdose_toc</span>(<span class="at">alum =</span> <span class="dv">30</span>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># fin_water &lt;- coag_water %&gt;%</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   chemdose_ph(naocl = 4) %&gt;%</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#   chemdose_dbp(cl2 = 2, time = 2, treatment = "coag")</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># print(paste("Coag DOC =", round(coag_water@doc, 1), "mg/L"))</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># print(paste("TTHM =", round(fin_water@tthm), "ug/L"))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>fin_water <span class="ot">&lt;-</span> coag_water <span class="sc">%&gt;%</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">chemdose_ph</span>(<span class="at">naocl =</span> <span class="dv">4</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">chemdose_dbp</span>(<span class="at">cl2 =</span> <span class="dv">2</span>, <span class="at">time =</span> <span class="dv">2</span>, <span class="at">treatment =</span> <span class="st">"coag"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in chemdose_dbp(., cl2 = 2, time = 2, treatment = "coag"): Temperature
+is outside the model bounds of temp=20 Celsius for coagulated water.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in chemdose_dbp(., cl2 = 2, time = 2, treatment = "coag"): pH is
+outside the model bounds of pH = 7.5 for coagulated water</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Coag DOC ="</span>, <span class="fu">round</span>(coag_water<span class="sc">@</span>doc, <span class="dv">1</span>), <span class="st">"mg/L"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Coag DOC = 2.1 mg/L"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"TTHM ="</span>, <span class="fu">round</span>(fin_water<span class="sc">@</span>tthm), <span class="st">"ug/L"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "TTHM = 18 ug/L"</code></pre>
+</div>
 </div>
 <p>So we can get some model outputs, but how does this tell us anything about our water? For that, we need to look at our historical data. We created some example data, but for a real analysis, this is when you would need to do data read-in and cleanup.</p>
 <p>This first question we want to answer (to know if our water is “haunted”) is: <em>Is my TOC hard to remove?</em> By answering this question, we can understand the applicability of these empirical models and whether additional treatment (such as pre-ozone) would help. To answer this question, we want to apply <code>chemdose_toc</code> to our historical data using the <code>_chain</code> family of functions. First, we’ll have to set up the columns, including a new UV column. Since we don’t have historical UV data, we can assume a SUVA and calculate UV.</p>
 <p>Note that we don’t use <code>chemdose_ph</code> in this case because we have the coagulation pH in our historical data. We’re also treating TOC and DOC as interchangable because they are usually close and DOC wasn’t measured.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(hist_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(hist_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "raw_toc"   "fin_toc"   "coag_ph"   "fin_ph"    "cl2_dose"  "alum_dose"
 [7] "tthm"     </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>coag_model <span class="ot">&lt;-</span> hist_data <span class="sc">%&gt;%</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Creating new columns to feed into define_water_chain</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">doc =</span> raw_toc,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">ph =</span> coag_ph,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">alum =</span> alum_dose) <span class="sc">%&gt;%</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">suva_raw =</span> <span class="dv">2</span>,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">uv254 =</span> suva_raw <span class="sc">/</span> <span class="dv">100</span> <span class="sc">*</span> doc) <span class="co">#%&gt;%</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># define_water_chain("precoag") %&gt;%</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># chemdose_toc_chain("precoag", "coag") %&gt;%</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># # Pull out parameters of interest</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># pluck_water("coag", "doc")</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot actual vs modeled coagulated DOC</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co">#this is a fake plot placeholder until tidywater is on CRAN. replace with commented out plot below when tidywater is a real boy</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coag_model, <span class="fu">aes</span>(<span class="at">x =</span> ph, <span class="at">y =</span> doc)) <span class="sc">+</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>() <span class="sc">+</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>)) <span class="sc">+</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Actual TOC"</span>, <span class="at">y =</span> <span class="st">"Modeled TOC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>coag_model <span class="ot">&lt;-</span> hist_data <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Creating new columns to feed into define_water_chain</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">doc =</span> raw_toc,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">ph =</span> coag_ph,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">alum =</span> alum_dose) <span class="sc">%&gt;%</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">suva_raw =</span> <span class="dv">2</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">uv254 =</span> suva_raw <span class="sc">/</span> <span class="dv">100</span> <span class="sc">*</span> doc) <span class="sc">%&gt;%</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">define_water_chain</span>(<span class="st">"precoag"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">chemdose_toc_chain</span>(<span class="st">"precoag"</span>, <span class="st">"coag"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Pull out parameters of interest</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pluck_water</span>(<span class="st">"coag"</span>, <span class="st">"doc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: There were 36 warnings in `mutate()`.
+The first warning was:
+ℹ In argument: `precoag = furrr::future_pmap(., define_water)`.
+Caused by warning in `...furrr_fn()`:
+! Missing value for alkalinity. Carbonate balance will not be calculated.
+ℹ Run `dplyr::last_dplyr_warnings()` to see the 35 remaining warnings.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot actual vs modeled coagulated DOC</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coag_model, <span class="fu">aes</span>(<span class="at">x =</span> fin_toc, <span class="at">y =</span> coag_doc)) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>() <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>)) <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Actual TOC"</span>, <span class="at">y =</span> <span class="st">"Modeled TOC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -313,12 +389,6 @@ window.Quarto = {
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot(coag_model, aes(x = fin_toc, y = coag_doc)) +</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_point() +</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   geom_abline() +</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   coord_cartesian(xlim = c(0, NA), ylim = c(0, NA)) +</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   theme_bw() +</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#   labs(x = "Actual TOC", y = "Modeled TOC")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In a plot like this, anything above the 1:1 line means that the model is predicting “worse” removal than we are actually seeing and below the 1:1 line means that the model is predicting “better” removal. So if most of your data is below the line, your TOC is more recalcitrant to removal than the waters used to create the model - more “challenging” than a typical source water. If you are close to the line, you can use the model to get a pretty good prediction of coagulation performance.</p>
 <p>The next question we want to ask is: <em>Are there conditions that make my TOC easier or harder to remove?</em></p>

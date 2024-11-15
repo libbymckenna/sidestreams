@@ -10,6 +10,9 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/index.html",
+      "/posts/post-with-code/index.html",
+      "/posts/haunted-water/index.html",
       "/posts/welcome/index.html"
     ]
   },
