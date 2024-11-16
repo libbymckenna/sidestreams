@@ -10,7 +10,7 @@ image: "intro_pic.png"
 
 This vignette can also be accessed in RStudio by running the folllowing
 
-```{r}
+```{r, echo=FALSE}
 #| label: load-packages
 #| include: false
 #| echo: false
