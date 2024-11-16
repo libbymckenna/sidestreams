@@ -18,7 +18,7 @@ This vignette can also be accessed in RStudio by running the folllowing
 library(tidyverse)
 ```
 
-```{r}
+```{r , echo=FALSE}
 
 library(tidywater)
 
