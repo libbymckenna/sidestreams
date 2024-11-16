@@ -38,6 +38,12 @@ jobs:
         with:
           r-version: '4.2.0'
 
+      - name: Install Required R Packages
+        run: |
+          Rscript -e "install.packages('yaml')"
+          Rscript -e "install.packages('rmarkdown')"
+          Rscript -e "install.packages('knitr')"
+
       - name: Restore R Environment
         run: |
           Rscript -e "install.packages('renv')"
