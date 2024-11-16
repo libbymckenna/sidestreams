@@ -40,6 +40,7 @@ jobs:
 
       - name: Restore R Environment
         run: |
+          Rscript -e "install.packages('tidyverse')"
           Rscript -e "install.packages('renv')"
           Rscript -e "renv::restore()"
 
