@@ -17,14 +17,6 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Cache R packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.R
-          key: ${{ runner.os }}-r-${{ hashFiles('**/*.R') }}-${{ hashFiles('**/*.qmd') }}
-          restore-keys: |
-            ${{ runner.os }}-r-
-
       - name: Install System Dependencies
         run: |
           sudo apt-get update
