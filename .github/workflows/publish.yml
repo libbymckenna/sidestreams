@@ -17,16 +17,13 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Create Cache Directory
-        run: mkdir -p ~/.local/share/renv
-
       - name: Cache R packages
         uses: actions/cache@v3
         with:
-          path: ~/.local/share/renv
-          key: ${{ runner.os }}-renv-${{ hashFiles('**/*.R') }}-${{ hashFiles('**/*.qmd') }}
+          path: ~/.R
+          key: ${{ runner.os }}-r-${{ hashFiles('**/*.R') }}-${{ hashFiles('**/*.qmd') }}
           restore-keys: |
-            ${{ runner.os }}-renv-
+            ${{ runner.os }}-r-
 
       - name: Install System Dependencies
         run: |
@@ -38,11 +35,14 @@ jobs:
         with:
           r-version: '4.2.0'
 
-      - name: Restore R Environment
+      - name: Install Required R Packages
         run: |
           Rscript -e "install.packages('tidyverse')"
-          Rscript -e "install.packages('renv')"
-          Rscript -e "renv::restore()"
+
+      - name: Install R Dependencies
+        uses: r-lib/actions/setup-renv@v2
+        with:
+          cache-version: 1
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
