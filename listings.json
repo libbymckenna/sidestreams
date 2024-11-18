@@ -1,22 +1,17 @@
 [
   {
-    "listing": "/posts/welcome/index.html",
-    "items": []
-  },
-  {
-    "listing": "/posts/intro-vignette/index.html",
+    "listing": "/posts/haunted-water/index.html",
     "items": []
   },
   {
     "listing": "/index.html",
     "items": [
       "/posts/haunted-water/index.html",
-      "/posts/intro-vignette/index.html",
-      "/posts/welcome/index.html"
+      "/posts/intro-vignette/index.html"
     ]
   },
   {
-    "listing": "/posts/haunted-water/index.html",
+    "listing": "/posts/intro-vignette/index.html",
     "items": []
   }
 ]

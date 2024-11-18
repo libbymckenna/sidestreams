@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://libbymckenna.github.io/sidestreams/posts/welcome/index.html</loc>
-    <lastmod>2024-11-18T21:45:55.589Z</lastmod>
-  </url>
-  <url>
-    <loc>https://libbymckenna.github.io/sidestreams/posts/intro-vignette/index.html</loc>
-    <lastmod>2024-11-18T21:45:55.589Z</lastmod>
-  </url>
-  <url>
-    <loc>https://libbymckenna.github.io/sidestreams/about.html</loc>
-    <lastmod>2024-11-18T21:45:55.585Z</lastmod>
+    <loc>https://libbymckenna.github.io/sidestreams/posts/haunted-water/index.html</loc>
+    <lastmod>2024-11-18T23:09:34.361Z</lastmod>
   </url>
   <url>
     <loc>https://libbymckenna.github.io/sidestreams/index.html</loc>
-    <lastmod>2024-11-18T21:45:55.585Z</lastmod>
+    <lastmod>2024-11-18T23:09:34.357Z</lastmod>
   </url>
   <url>
-    <loc>https://libbymckenna.github.io/sidestreams/posts/haunted-water/index.html</loc>
-    <lastmod>2024-11-18T21:45:55.589Z</lastmod>
+    <loc>https://libbymckenna.github.io/sidestreams/about.html</loc>
+    <lastmod>2024-11-18T23:09:34.357Z</lastmod>
+  </url>
+  <url>
+    <loc>https://libbymckenna.github.io/sidestreams/posts/intro-vignette/index.html</loc>
+    <lastmod>2024-11-18T23:09:34.361Z</lastmod>
   </url>
 </urlset>
