@@ -11,7 +11,7 @@
     "href": "posts/intro-vignette/index.html",
     "title": "Making posts work",
     "section": "",
-    "text": "This vignette can also be accessed in RStudio by running the folllowing\nlibrary(tidywater)\n\nvignette(\"intro\", package = \"tidywater\")\n\nstarting httpd help server ... done"
+    "text": "This vignette can also be accessed in RStudio by running the folllowing\nstarting httpd help server ... done"
   },
   {
     "objectID": "posts/intro-vignette/index.html#defining-a-water",
