@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Libby McKenna">
-<meta name="dcterms.date" content="2024-08-22">
+<meta name="dcterms.date" content="2024-11-01">
 
 <title>Welcome To Sidestreams – sidestreams</title>
 <style>
@@ -190,7 +190,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">August 22, 2024</p>
+        <p class="date">November 1, 2024</p>
       </div>
     </div>
     
@@ -218,41 +218,52 @@ window.Quarto = {
 
 
 
-<p>Welcome to Sidestreams, where the developers post tips and stories relating to the tidywater package.</p>
+<p>Welcome to Sidestreams, where the developers post tips and stories relating to the tidywater R package.</p>
 <section id="what-is-tidywater" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-tidywater">What is tidywater?</h2>
-<p>Tidywater is a free, open source R package containing drinking water quality models. All models are publicly available. For references on all models, please see the public GitHub repository <a href="https://github.com/BrownandCaldwell-Public/tidywater"> here</a>.</p>
+<p>Tidywater is a free, open source R package containing drinking water quality models. Tidywater is available on CRAN and can easily be installed in RStudio using <code>install.packages("tidywater")</code>. All models are publicly available. For references on all models, please see the public GitHub repository <a href="https://github.com/BrownandCaldwell-Public/tidywater"> here</a>.</p>
 </section>
 <section id="what-models-are-included" class="level2">
 <h2 class="anchored" data-anchor-id="what-models-are-included">What models are included?</h2>
-<p>Here is a complete list of all models in version 0.6.2 and how to reference them in your code:</p>
+<p>Here are some models in version 0.6.2 and how to reference them in your code. Note, this does not include all functions and models in tidywater.</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 25%">
+<col style="width: 38%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Model</th>
-<th style="text-align: left;">Tidywater Function</th>
-<th style="text-align: right;">What it models</th>
-<th style="text-align: center;">other</th>
+<th>Tidywater Function</th>
+<th>What it models</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>test</td>
-<td style="text-align: left;">define_water()</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: center;">12</td>
+<td>Terry biofiltration model</td>
+<td><code>biofilter_toc</code></td>
+<td>DOC removal from biofiltration</td>
 </tr>
 <tr class="even">
-<td>123</td>
-<td style="text-align: left;"><code>chemdose</code></td>
-<td style="text-align: right;">123</td>
-<td style="text-align: center;">123</td>
+<td>Edwards coagulation</td>
+<td><code>chemdose_toc</code></td>
+<td>DOC removal from coadulation</td>
 </tr>
 <tr class="odd">
-<td>abc</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: center;">1</td>
+<td>WTP model DBP formation</td>
+<td><code>chemdose_dbp</code></td>
+<td>DBP formation based on applied chlorine dose</td>
+</tr>
+<tr class="even">
+<td>Corrosion and scaling indices</td>
+<td><code>calculate_corrosion</code></td>
+<td>aggressiveness, Ryznar, Langelier Saturation, calcium carbonate precipitation potential, Larson Skold, chloride to sulfate mass ratio</td>
+</tr>
+<tr class="odd">
+<td>Theoretical lead solubility</td>
+<td><code>dissolve_pb</code></td>
+<td>Dissolved lead in water</td>
 </tr>
 </tbody>
 </table>

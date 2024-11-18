@@ -4,21 +4,21 @@
     "href": "posts/welcome/index.html",
     "title": "Welcome To Sidestreams",
     "section": "",
-    "text": "Welcome to Sidestreams, where the developers post tips and stories relating to the tidywater package."
+    "text": "Welcome to Sidestreams, where the developers post tips and stories relating to the tidywater R package."
   },
   {
     "objectID": "posts/welcome/index.html#what-is-tidywater",
     "href": "posts/welcome/index.html#what-is-tidywater",
     "title": "Welcome To Sidestreams",
     "section": "What is tidywater?",
-    "text": "What is tidywater?\nTidywater is a free, open source R package containing drinking water quality models. All models are publicly available. For references on all models, please see the public GitHub repository  here."
+    "text": "What is tidywater?\nTidywater is a free, open source R package containing drinking water quality models. Tidywater is available on CRAN and can easily be installed in RStudio using install.packages(\"tidywater\"). All models are publicly available. For references on all models, please see the public GitHub repository  here."
   },
   {
     "objectID": "posts/welcome/index.html#what-models-are-included",
     "href": "posts/welcome/index.html#what-models-are-included",
     "title": "Welcome To Sidestreams",
     "section": "What models are included?",
-    "text": "What models are included?\nHere is a complete list of all models in version 0.6.2 and how to reference them in your code:\n\n\n\nModel\nTidywater Function\nWhat it models\nother\n\n\n\n\ntest\ndefine_water()\n12\n12\n\n\n123\nchemdose\n123\n123\n\n\nabc\n1\n1\n1"
+    "text": "What models are included?\nHere are some models in version 0.6.2 and how to reference them in your code. Note, this does not include all functions and models in tidywater.\n\n\n\n\n\n\n\n\nModel\nTidywater Function\nWhat it models\n\n\n\n\nTerry biofiltration model\nbiofilter_toc\nDOC removal from biofiltration\n\n\nEdwards coagulation\nchemdose_toc\nDOC removal from coadulation\n\n\nWTP model DBP formation\nchemdose_dbp\nDBP formation based on applied chlorine dose\n\n\nCorrosion and scaling indices\ncalculate_corrosion\naggressiveness, Ryznar, Langelier Saturation, calcium carbonate precipitation potential, Larson Skold, chloride to sulfate mass ratio\n\n\nTheoretical lead solubility\ndissolve_pb\nDissolved lead in water"
   },
   {
     "objectID": "posts/intro-vignette/index.html",
@@ -67,7 +67,7 @@
     "href": "index.html",
     "title": "sidestreams",
     "section": "",
-    "text": "Three ways to find out if your water is haunted…\n\n\n…by challenging organics\n\n\n\ntoc\n\n\ntreatment\n\n\n\n\n\n\n\n\n\nAug 25, 2024\n\n\nSierra Johnson\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To Sidestreams\n\n\n\n\n\n\nwelcome\n\n\n\n\n\n\n\n\n\nAug 22, 2024\n\n\nLibby McKenna\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to tidywater\n\n\nHow to implement package models in your analysis.\n\n\n\nintro\n\n\n\n\n\n\n\n\n\nJun 25, 2024\n\n\nLibby McKenna\n\n\n\n\n\n\nNo matching items"
+    "text": "Three ways to find out if your water is haunted…\n\n\n…by challenging organics\n\n\n\ntoc\n\n\ntreatment\n\n\n\n\n\n\n\n\n\nNov 18, 2024\n\n\nSierra Johnson\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to tidywater\n\n\nHow to implement package models in your analysis.\n\n\n\nintro\n\n\n\n\n\n\n\n\n\nNov 5, 2024\n\n\nLibby McKenna\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To Sidestreams\n\n\n\n\n\n\nwelcome\n\n\n\n\n\n\n\n\n\nNov 1, 2024\n\n\nLibby McKenna\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/haunted-water/index.html",
