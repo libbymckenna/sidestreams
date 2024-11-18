@@ -32,12 +32,12 @@ jobs:
           Rscript -e "install.packages('tidyverse')"
 
       - name: Create Cache Directory
-        run: mkdir -p ~/.local/share/renv
+        run: mkdir -p ~/.cache/R/renv
 
       - name: Cache R packages
         uses: actions/cache@v3
         with:
-          path: ~/.local/share/renv
+          path: ~/.cache/R/renv
           key: ${{ runner.os }}-renv-${{ hashFiles('**/*.R') }}-${{ hashFiles('**/*.qmd') }}
           restore-keys: |
             ${{ runner.os }}-renv-
