@@ -2,7 +2,7 @@
 title: "Introduction to tidywater"
 subtitle: "How to implement package models in your analysis."
 author: "Libby McKenna"
-date: "2024-06-25"
+date: "2024-11-05"
 categories: [intro]
 image: "intro_pic.png"
 

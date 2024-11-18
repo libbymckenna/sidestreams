@@ -2,7 +2,7 @@
 title: "Three ways to find out if your water is haunted..."
 subtitle: "...by challenging organics"
 author: "Sierra Johnson"
-date: "2024-08-25"
+date: "2024-11-18"
 categories: [toc, treatment]
 image: "haunted_water.png"
 ---

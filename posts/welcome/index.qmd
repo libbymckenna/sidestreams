@@ -1,26 +1,31 @@
 ---
 title: "Welcome To Sidestreams"
 author: "Libby McKenna"
-date: "2024-08-22"
+date: "2024-11-01"
 categories: [welcome]
 ---
 
-Welcome to Sidestreams, where the developers post tips and stories relating to the tidywater package.
+Welcome to Sidestreams, where the developers post tips and stories relating to the tidywater R package.
 
 ## What is tidywater?
 
-Tidywater is a free, open source R package containing drinking water quality models. All models
+Tidywater is a free, open source R package containing drinking water quality models. Tidywater is
+available on CRAN and can easily be installed in RStudio using `install.packages("tidywater")`. All models
 are publicly available. For references on all models, please see the public GitHub repository <a href = "https://github.com/BrownandCaldwell-Public/tidywater"> here</a>.
 
 ## What models are included?
 
-Here is a complete list of all models in version 0.6.2 and how to reference them in your code: 
+Here are some models in version 0.6.2 and how to reference them in your code. Note, 
+this does not include all functions and models in tidywater.
 
 
-| Model   | Tidywater Function | What it models | other  |
-|---------|:-------------------|---------------:|:------:|
-| test    | define_water()     |    12          |   12   |
-| 123     | `chemdose`         |   123          |  123   |
-| abc     | 1                  |     1          |   1    |
+| Model                        | Tidywater Function   | What it models                  |
+|------------------------------|----------------------|---------------------------------|
+| Terry biofiltration model    | `biofilter_toc `     | DOC removal from biofiltration  |
+| Edwards coagulation          | `chemdose_toc`       | DOC removal from coadulation    |
+| WTP model DBP formation      | `chemdose_dbp`       | DBP formation based on applied chlorine dose    |
+| Corrosion and scaling indices| `calculate_corrosion`| aggressiveness, Ryznar, Langelier Saturation, calcium carbonate precipitation potential, Larson Skold, chloride to sulfate mass ratio         |  
+| Theoretical lead solubility  | `dissolve_pb`        | Dissolved lead in water         |
+
 
 
