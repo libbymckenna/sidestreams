@@ -10,9 +10,9 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/intro-vignette/index.html",
       "/posts/haunted-water/index.html",
-      "/posts/welcome/index.html"
+      "/posts/welcome/index.html",
+      "/posts/intro-vignette/index.html"
     ]
   },
   {

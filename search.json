@@ -2,16 +2,30 @@
   {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "title": "Welcome To Sidestreams",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts.\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome to Sidestreams, where the developers post tips and stories relating to the tidywater package."
+  },
+  {
+    "objectID": "posts/welcome/index.html#what-is-tidywater",
+    "href": "posts/welcome/index.html#what-is-tidywater",
+    "title": "Welcome To Sidestreams",
+    "section": "What is tidywater?",
+    "text": "What is tidywater?\nTidywater is a free, open source R package containing drinking water quality models. All models are publicly available. For references on all models, please see the public GitHub repository  here."
+  },
+  {
+    "objectID": "posts/welcome/index.html#what-models-are-included",
+    "href": "posts/welcome/index.html#what-models-are-included",
+    "title": "Welcome To Sidestreams",
+    "section": "What models are included?",
+    "text": "What models are included?\nHere is a complete list of all models in version 0.6.2 and how to reference them in your code:\n\n\n\nModel\nTidywater Function\nWhat it models\nother\n\n\n\n\ntest\ndefine_water()\n12\n12\n\n\n123\nchemdose\n123\n123\n\n\nabc\n1\n1\n1"
   },
   {
     "objectID": "posts/intro-vignette/index.html",
     "href": "posts/intro-vignette/index.html",
     "title": "Introduction to tidywater",
     "section": "",
-    "text": "This vignette can also be accessed in RStudio by running the following\nlibrary(tidywater)\n\nvignette(\"intro\", package = \"tidywater\")\n\nstarting httpd help server ... done"
+    "text": "The tidywater package can be installed like any other package on CRAN by simply running install.packages(\"tidywater\"). For more details on the package, please see our public GitHub repository  here.\nThis vignette can also be accessed in RStudio by running the following\nlibrary(tidywater)\n\nvignette(\"intro\", package = \"tidywater\")"
   },
   {
     "objectID": "posts/intro-vignette/index.html#defining-a-water",
@@ -39,7 +53,7 @@
     "href": "posts/intro-vignette/index.html#modelling-assumptions",
     "title": "Introduction to tidywater",
     "section": "Modelling assumptions",
-    "text": "Modelling assumptions\n\nIonic strength\nObviously, “adding” 69.6 mg/L of potassium to my_water is an assumption. There could be other cations in the water besides potassium that we don’t know about. But having a balanced water is important because it affects the ionic strength, which in turn affects how different species interact when we dose chemicals into the water. You can see more detail on ionic strength and chemical dosing in the chemdose_ph vignette, but for now let’s take a look at the ionic strength of my_water before and after balancing the ions.\n\n# The ionic strength slot was NA in the original water because we did not\n# provide enough information to calculate it\nmy_water@is\n\n[1] NA\n\nbalanced_water@is # Now the ionic strength is 0.002 M\n\n[1] NA\n\n\nThere are a couple of other assumptions that define_water makes to be able to set up the data for downstream tidywater functions. These include standard ratios for hardness and DOC.\n\n\nHardness\nFirst, when only you only know the total hardness of the water (tot_hard), calcium hardness (ca_hard) is assumed to be 65% of the total, which is about average for  U.S. drinking water. When only ca_hard is provided, tot_hard is assumed to be equal to calcium hardness/0.65. Magnesium hardness (mg_hard) is then calculated as total hardness - calcium hardness.\nLet’s look at this using define_water. We can use convert_units to get the output in standard units of hardness. By defining only the total hardness, we see that the water vector also contains estimates for calcium and magnesium.\n\n# Calculate hardness or calcium hardness\nhard_water &lt;- define_water(8, 20, 100, tot_hard = 150)\n\n# total hardness in mg/L CaCO3\nhard_water@tot_hard\n\n[1] 150\n\n# calcium hardness\nconvert_units(value = hard_water@ca, formula = \"ca\", startunit = \"M\", endunit = \"mg/L CaCO3\")\n\n[1] 97.5\n\n# magnesium hardness\nconvert_units(value = hard_water@mg, formula = \"mg\", startunit = \"M\", endunit = \"mg/L CaCO3\")\n\n[1] 52.5\n\n\n\n\nTotal and dissolved organic carbon\nTOC and DOC inputs operate similarly to hardness. TOC and DOC are important to know for modelling and predicting various water treatment processes. If you only know TOC, define_water applies a standard conversion to estimate DOC, and vice versa. If only toc is provided, doc is assumed to be 95% of the TOC. If only doc is provided, toc is assumed to be DOC/0.95. This ratio would generally be an acceptable estimate for most drinking water scenarios, but the amount of TOC that is dissolved in raw waters could vary widely. Westerhoff and Anning, 2000 reported a range of 10-100% dissolved TOC in 25 surface waters, so keep in mind that the standard conversion may not be right for your context.\n\n# Calculate TOC and DOC\ntoc_water &lt;- define_water(8, 20, 100, toc = 3)\ntoc_water@toc # mg/L\n\n[1] 3\n\ntoc_water@doc # mg/L\n\n[1] 2.85\n\ndoc_water &lt;- define_water(8, 20, 100, doc = 1.3)\ndoc_water@toc # mg/L\n\n[1] 1.368421\n\ndoc_water@doc # mg/L\n\n[1] 1.3\n\n\nOverall, tidywater helps you model scenarios with as little information as possible because we often don’t have all the data we would like, but the less you have to assume about your water, the better. It’s important to understand and list the assumptions you are making during any modelling effort.\nCheck out our other vignettes to learn more about tidywater’s functions for modelling softening, coagulation, DBP formation…. here ____."
+    "text": "Modelling assumptions\nThere are a couple of assumptions that define_water makes to be able to set up the data for downstream tidywater functions. These include standard ratios for hardness and DOC.\n\nHardness\nFirst, when only you only know the total hardness of the water (tot_hard), calcium hardness (ca_hard) is assumed to be 65% of the total, which is about average for  U.S. drinking water. When only ca_hard is provided, tot_hard is assumed to be equal to calcium hardness/0.65. Magnesium hardness (mg_hard) is then calculated as total hardness - calcium hardness.\nLet’s look at this using define_water. We can use convert_units to get the output in standard units of hardness. By defining only the total hardness, we see that the water vector also contains estimates for calcium and magnesium.\n\n# Calculate hardness or calcium hardness\nhard_water &lt;- define_water(8, 20, 100, tot_hard = 150)\n\n# total hardness in mg/L CaCO3\nhard_water@tot_hard\n\n[1] 150\n\n# calcium hardness\nconvert_units(value = hard_water@ca, formula = \"ca\", startunit = \"M\", endunit = \"mg/L CaCO3\")\n\n[1] 97.5\n\n# magnesium hardness\nconvert_units(value = hard_water@mg, formula = \"mg\", startunit = \"M\", endunit = \"mg/L CaCO3\")\n\n[1] 52.5\n\n\n\n\nTotal and dissolved organic carbon\nTOC and DOC inputs operate similarly to hardness. TOC and DOC are important to know for modelling and predicting various water treatment processes. If you only know TOC, define_water applies a standard conversion to estimate DOC, and vice versa. If only toc is provided, doc is assumed to be 95% of the TOC. If only doc is provided, toc is assumed to be DOC/0.95. This ratio would generally be an acceptable estimate for most drinking water scenarios, but the amount of TOC that is dissolved in raw waters could vary widely. Westerhoff and Anning, 2000 reported a range of 10-100% dissolved TOC in 25 surface waters, so keep in mind that the standard conversion may not be right for your context.\n\n# Calculate TOC and DOC\ntoc_water &lt;- define_water(8, 20, 100, toc = 3)\ntoc_water@toc # mg/L\n\n[1] 3\n\ntoc_water@doc # mg/L\n\n[1] 2.85\n\ndoc_water &lt;- define_water(8, 20, 100, doc = 1.3)\ndoc_water@toc # mg/L\n\n[1] 1.368421\n\ndoc_water@doc # mg/L\n\n[1] 1.3\n\n\nOverall, tidywater helps you model scenarios with as little information as possible because we often don’t have all the data we would like, but the less you have to assume about your water, the better. It’s important to understand and list the assumptions you are making during any modelling effort.\nCheck out our other vignettes to learn more about tidywater’s functions for modelling softening, coagulation, DBP formation…. here ____."
   },
   {
     "objectID": "about.html",
@@ -53,7 +67,7 @@
     "href": "index.html",
     "title": "sidestreams",
     "section": "",
-    "text": "Introduction to tidywater\n\n\nHow to implement package models in your analysis.\n\n\n\nquarto_blog\n\n\n\n\n\n\n\n\n\nAug 25, 2024\n\n\nLibby McKenna\n\n\n\n\n\n\n\n\n\n\n\n\nThree ways to find out if your water is haunted…\n\n\n…by challenging organics\n\n\n\ntoc\n\n\ntreatment\n\n\n\n\n\n\n\n\n\nAug 25, 2024\n\n\nSierra Johnson\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nAug 22, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Three ways to find out if your water is haunted…\n\n\n…by challenging organics\n\n\n\ntoc\n\n\ntreatment\n\n\n\n\n\n\n\n\n\nAug 25, 2024\n\n\nSierra Johnson\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To Sidestreams\n\n\n\n\n\n\nwelcome\n\n\n\n\n\n\n\n\n\nAug 22, 2024\n\n\nLibby McKenna\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to tidywater\n\n\nHow to implement package models in your analysis.\n\n\n\nintro\n\n\n\n\n\n\n\n\n\nJun 25, 2024\n\n\nLibby McKenna\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/haunted-water/index.html",
