@@ -2,11 +2,14 @@
 title: "Introduction to tidywater"
 subtitle: "How to implement package models in your analysis."
 author: "Libby McKenna"
-date: "2024-08-25"
-categories: [quarto_blog]
+date: "2024-06-25"
+categories: [intro]
 image: "intro_pic.png"
 
 ---
+The tidywater package can be installed like any other package on CRAN by simply running
+`install.packages("tidywater")`. For more details on the package, please see our public
+GitHub repository <a href = "https://github.com/BrownandCaldwell-Public/tidywater"> here</a>. 
 
 This vignette can also be accessed in RStudio by running the following
 
@@ -15,7 +18,7 @@ This vignette can also be accessed in RStudio by running the following
 library(tidyverse)
 ```
 
-```{r , echo=TRUE}
+```{r , echo=TRUE, message=FALSE}
 
 library(tidywater)
 
@@ -93,18 +96,7 @@ convert_units(value = balanced_water@k, formula = "k", startunit = "M", endunit 
 ```
 ## Modelling assumptions
 
-### Ionic strength
-
-Obviously, "adding" 69.6 mg/L of potassium to `my_water` is an assumption. There could be other cations in the water besides potassium that we don't know about. But having a balanced `water` is important because it affects the ionic strength, which in turn affects how different species interact when we dose chemicals into the `water`. You can see more detail on ionic strength and chemical dosing in the `chemdose_ph` vignette, but for now let's take a look at the ionic strength of `my_water` before and after balancing the ions. 
-
-```{r}
-# The ionic strength slot was NA in the original water because we did not
-# provide enough information to calculate it
-my_water@is
-balanced_water@is # Now the ionic strength is 0.002 M
-```
-
-There are a couple of other assumptions that `define_water` makes to be able to set up the data for downstream `tidywater` functions. These include standard ratios for hardness and DOC. 
+There are a couple of assumptions that `define_water` makes to be able to set up the data for downstream `tidywater` functions. These include standard ratios for hardness and DOC. 
 
 ### Hardness
 

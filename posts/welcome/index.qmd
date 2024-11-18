@@ -1,12 +1,26 @@
 ---
-title: "Welcome To My Blog"
-author: "Tristan O'Malley"
+title: "Welcome To Sidestreams"
+author: "Libby McKenna"
 date: "2024-08-22"
-categories: [news]
+categories: [welcome]
 ---
 
-This is the first post in a Quarto blog. Welcome!
+Welcome to Sidestreams, where the developers post tips and stories relating to the tidywater package.
 
-![](thumbnail.jpg)
+## What is tidywater?
 
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
+Tidywater is a free, open source R package containing drinking water quality models. All models
+are publicly available. For references on all models, please see the public GitHub repository <a href = "https://github.com/BrownandCaldwell-Public/tidywater"> here</a>.
+
+## What models are included?
+
+Here is a complete list of all models in version 0.6.2 and how to reference them in your code: 
+
+
+| Model   | Tidywater Function | What it models | other  |
+|---------|:-------------------|---------------:|:------:|
+| test    | define_water()     |    12          |   12   |
+| 123     | `chemdose`         |   123          |  123   |
+| abc     | 1                  |     1          |   1    |
+
+
