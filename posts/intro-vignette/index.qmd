@@ -1,6 +1,6 @@
 ---
-title: "Making posts work"
-subtitle: "fiddling around with ymls"
+title: "Introduction to tidywater"
+subtitle: "How to implement package models in your analysis."
 author: "Libby McKenna"
 date: "2024-08-25"
 categories: [quarto_blog]
@@ -8,17 +8,14 @@ image: "intro_pic.png"
 
 ---
 
-This vignette can also be accessed in RStudio by running the folllowing
+This vignette can also be accessed in RStudio by running the following
 
-```{r, echo=FALSE}
-#| label: load-packages
-#| include: false
-#| echo: false
+```{r, echo=FALSE, message=FALSE}
 
 library(tidyverse)
 ```
 
-```{r , echo=FALSE}
+```{r , echo=TRUE}
 
 library(tidywater)
 
