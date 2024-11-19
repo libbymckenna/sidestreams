@@ -23,7 +23,7 @@ viewof y = select(["Sepal Length", "Sepal Width", "Petal Length", "Petal Width"]
 
 Plot.plot({
   marks: [
-    Plot.dot(iris, { x: d => d[Sepal.Length], y: d => d[Petal.Length], fill: "Species" })
+    Plot.dot(iris, { x: d => d[x], y: d => d[y], fill: "Species" })
   ]
 })
 ```
