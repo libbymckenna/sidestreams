@@ -35,23 +35,23 @@
     "text": "Sidestreams\nThis blog is built in Quarto and is deployed using GitHub pages. See our public repository  here. In addition to the packages listed above, the tidyverse package is used throughout the blog."
   },
   {
-    "objectID": "home.html",
-    "href": "home.html",
-    "title": "Home",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
     "text": "Welcome to Sidestreams, where the developers post tips and stories relating to the tidywater R package."
   },
   {
-    "objectID": "home.html#what-is-tidywater",
-    "href": "home.html#what-is-tidywater",
-    "title": "Home",
+    "objectID": "about.html#what-is-tidywater",
+    "href": "about.html#what-is-tidywater",
+    "title": "About",
     "section": "What is tidywater?",
     "text": "What is tidywater?\nTidywater is a free, open source R package containing drinking water quality models. Tidywater is available on CRAN and can easily be installed in RStudio using install.packages(\"tidywater\"). All models are publicly available. For references on all models, please see the public GitHub repository  here."
   },
   {
-    "objectID": "home.html#what-models-are-included",
-    "href": "home.html#what-models-are-included",
-    "title": "Home",
+    "objectID": "about.html#what-models-are-included",
+    "href": "about.html#what-models-are-included",
+    "title": "About",
     "section": "What models are included?",
     "text": "What models are included?\nHere are some models in version 0.6.2 and how to reference them in your code. Note, this does not include all functions and models in tidywater.\n\n\n\n\n\n\n\n\nModel\nTidywater Function\nWhat it models\n\n\n\n\nTerry biofiltration model\nbiofilter_toc\nDOC removal from biofiltration\n\n\nEdwards coagulation\nchemdose_toc\nDOC removal from coadulation\n\n\nWTP model DBP formation\nchemdose_dbp\nDBP formation based on applied chlorine dose\n\n\nCorrosion and scaling indices\ncalculate_corrosion\naggressiveness, Ryznar, Langelier Saturation, calcium carbonate precipitation potential, Larson Skold, chloride to sulfate mass ratio\n\n\nTheoretical lead solubility\ndissolve_pb\nDissolved lead in water"
   },
