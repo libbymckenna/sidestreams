@@ -4,14 +4,14 @@
     "href": "posts/chemdose-quiz/chemdose_quiz.html",
     "title": "Interactive Dashboard",
     "section": "",
-    "text": "import { select } from \"@observablehq/inputs\";\nimport { Plot } from \"@observablehq/plot\";\n\nviewof x = select([\"Sepal Length\", \"Sepal Width\", \"Petal Length\", \"Petal Width\"], { label: \"X Variable\" });\nviewof y = select([\"Sepal Length\", \"Sepal Width\", \"Petal Length\", \"Petal Width\"], { label: \"Y Variable\" });\n\nPlot.plot({\n  marks: [\n    Plot.dot(iris, { x: d =&gt; d[x], y: d =&gt; d[y], fill: \"Species\" })\n  ]\n})"
+    "text": "```{ojs}\nimport { select } from \"https://cdn.jsdelivr.net/npm/@observablehq/inputs@0.12/+esm\";\nimport { Plot } from \"https://cdn.jsdelivr.net/npm/@observablehq/plot/+esm\";\n\n// Define the iris dataset\nconst iris = [\n  { \"Sepal Length\": 5.1, \"Sepal Width\": 3.5, \"Petal Length\": 1.4, \"Petal Width\": 0.2, \"Species\": \"setosa\" },\n  { \"Sepal Length\": 4.9, \"Sepal Width\": 3.0, \"Petal Length\": 1.4, \"Petal Width\": 0.2, \"Species\": \"setosa\" },\n  // Add more data points here...\n];\n\nviewof x = select([\"Sepal Length\", \"Sepal Width\", \"Petal Length\", \"Petal Width\"], { label: \"X Variable\" });\nviewof y = select([\"Sepal Length\", \"Sepal Width\", \"Petal Length\", \"Petal Width\"], { label: \"Y Variable\" });\n\nPlot.plot({\n  marks: [\n    Plot.dot(iris, { x: d =&gt; d[Sepal.Length], y: d =&gt; d[Petal.Length], fill: \"Species\" })\n  ]\n})\n```\n\n\n\n\n\n\n\nOJS Syntax Error (line 15, column 1)Unexpected token"
   },
   {
     "objectID": "posts/chemdose-quiz/chemdose_quiz.html#interactive-visualization",
     "href": "posts/chemdose-quiz/chemdose_quiz.html#interactive-visualization",
     "title": "Interactive Dashboard",
     "section": "",
-    "text": "import { select } from \"@observablehq/inputs\";\nimport { Plot } from \"@observablehq/plot\";\n\nviewof x = select([\"Sepal Length\", \"Sepal Width\", \"Petal Length\", \"Petal Width\"], { label: \"X Variable\" });\nviewof y = select([\"Sepal Length\", \"Sepal Width\", \"Petal Length\", \"Petal Width\"], { label: \"Y Variable\" });\n\nPlot.plot({\n  marks: [\n    Plot.dot(iris, { x: d =&gt; d[x], y: d =&gt; d[y], fill: \"Species\" })\n  ]\n})"
+    "text": "```{ojs}\nimport { select } from \"https://cdn.jsdelivr.net/npm/@observablehq/inputs@0.12/+esm\";\nimport { Plot } from \"https://cdn.jsdelivr.net/npm/@observablehq/plot/+esm\";\n\n// Define the iris dataset\nconst iris = [\n  { \"Sepal Length\": 5.1, \"Sepal Width\": 3.5, \"Petal Length\": 1.4, \"Petal Width\": 0.2, \"Species\": \"setosa\" },\n  { \"Sepal Length\": 4.9, \"Sepal Width\": 3.0, \"Petal Length\": 1.4, \"Petal Width\": 0.2, \"Species\": \"setosa\" },\n  // Add more data points here...\n];\n\nviewof x = select([\"Sepal Length\", \"Sepal Width\", \"Petal Length\", \"Petal Width\"], { label: \"X Variable\" });\nviewof y = select([\"Sepal Length\", \"Sepal Width\", \"Petal Length\", \"Petal Width\"], { label: \"Y Variable\" });\n\nPlot.plot({\n  marks: [\n    Plot.dot(iris, { x: d =&gt; d[Sepal.Length], y: d =&gt; d[Petal.Length], fill: \"Species\" })\n  ]\n})\n```\n\n\n\n\n\n\n\nOJS Syntax Error (line 15, column 1)Unexpected token"
   },
   {
     "objectID": "posts/intro-vignette/intro_post.html",
