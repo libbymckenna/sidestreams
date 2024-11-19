@@ -1,6 +1,5 @@
 ---
-title: "Home"
-categories: [welcome]
+title: "About"
 ---
 
 Welcome to Sidestreams, where the developers post tips and stories relating to the tidywater R package.

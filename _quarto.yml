@@ -6,10 +6,10 @@ website:
   favicon: tw_logo.png
   navbar:
     left:
-      - text: "Home"
-        href: home.qmd
       - text: "Posts"
         href: index.qmd
+      - text: "About"
+        href: about.qmd
       - text: "Sources"
         href: sources.qmd
 

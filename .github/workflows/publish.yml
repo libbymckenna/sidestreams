@@ -27,10 +27,6 @@ jobs:
         with:
           r-version: '4.4.0'
 
-      - name: Install Required R Packages
-        run: |
-          Rscript -e "install.packages('tidyverse')"
-
       - name: Create Cache Directory
         run: mkdir -p ~/.cache/R/renv
 
