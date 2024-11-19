@@ -8,15 +8,22 @@ format: html
 ## Interactive Visualization
 
 ```{ojs}
-import { select } from "@observablehq/inputs";
-import { Plot } from "@observablehq/plot";
+import { select } from "https://cdn.jsdelivr.net/npm/@observablehq/inputs@0.12/+esm";
+import { Plot } from "https://cdn.jsdelivr.net/npm/@observablehq/plot/+esm";
+
+// Define the iris dataset
+const iris = [
+  { "Sepal Length": 5.1, "Sepal Width": 3.5, "Petal Length": 1.4, "Petal Width": 0.2, "Species": "setosa" },
+  { "Sepal Length": 4.9, "Sepal Width": 3.0, "Petal Length": 1.4, "Petal Width": 0.2, "Species": "setosa" },
+  // Add more data points here...
+];
 
 viewof x = select(["Sepal Length", "Sepal Width", "Petal Length", "Petal Width"], { label: "X Variable" });
 viewof y = select(["Sepal Length", "Sepal Width", "Petal Length", "Petal Width"], { label: "Y Variable" });
 
 Plot.plot({
   marks: [
-    Plot.dot(iris, { x: d => d[x], y: d => d[y], fill: "Species" })
+    Plot.dot(iris, { x: d => d[Sepal.Length], y: d => d[Petal.Length], fill: "Species" })
   ]
 })
 ```
