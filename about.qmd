@@ -2,7 +2,7 @@
 title: "About"
 ---
 
-Welcome to Sidestreams, where the developers post tips and stories relating to the tidywater R package.
+Welcome to Sidestreams, where the tidywater developers post tips and stories relating to the tidywater R package.
 
 ## What is tidywater?
 
