@@ -1,7 +1,5 @@
 ---
-title: "About"
-author: "Libby McKenna"
-date: "2024-11-01"
+title: "Home"
 categories: [welcome]
 ---
 
