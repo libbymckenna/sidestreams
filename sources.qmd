@@ -1,0 +1,35 @@
+---
+title: "Sources"
+format: html
+editor: visual
+---
+
+Sidestreams and the tidywater package were made possible by the wonderful open-source tools created by the R community. We want to give credit where it's due and continue to foster collaboration and innovation.
+
+## Tidywater
+
+The tidywater package depends on functions from existing R packages, including:
+
+-   dplyr
+
+-   tidyr
+
+-   knitr
+
+-   ggplot2
+
+-   ggrepel
+
+-   magrittr
+
+-   purrr
+
+-   furrr
+
+-   methods
+
+-   rlang
+
+## Sidestreams
+
+This blog is built in Quarto and is deployed using GitHub pages. See our public repository <a href = "https://github.com/libbymckenna/sidestreams"> here</a>. In addition to the packages listed above, the `tidyverse` package is used throughout the blog.
