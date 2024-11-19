@@ -3,7 +3,7 @@ title: "Built-in tidywater features you didn't know you needed"
 subtitle: "How to apply tidywater's helper functions to a data frame"
 author: "Libby McKenna"
 date: "2024-11-19"
-categories: [helper_functions, blend_waters]
+categories: [helper functions, blend_waters]
 ---
 
 ```{r, include = FALSE, echo=FALSE, message=FALSE}
