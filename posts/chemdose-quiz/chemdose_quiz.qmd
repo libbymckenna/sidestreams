@@ -19,3 +19,4 @@ Plot.plot({
     Plot.dot(iris, { x: d => d[x], y: d => d[y], fill: "Species" })
   ]
 })
+```
