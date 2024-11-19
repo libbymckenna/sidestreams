@@ -4,8 +4,13 @@
     "items": []
   },
   {
+    "listing": "/posts/helpers-blend-vignette/index.html",
+    "items": []
+  },
+  {
     "listing": "/index.html",
     "items": [
+      "/posts/helpers-blend-vignette/index.html",
       "/posts/haunted-water/index.html",
       "/posts/intro-vignette/index.html"
     ]
