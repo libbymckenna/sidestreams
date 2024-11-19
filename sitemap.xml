@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://libbymckenna.github.io/sidestreams/posts/haunted-water/index.html</loc>
-    <lastmod>2024-11-19T21:07:39.434Z</lastmod>
-  </url>
-  <url>
-    <loc>https://libbymckenna.github.io/sidestreams/posts/helpers-blend-vignette/index.html</loc>
-    <lastmod>2024-11-19T21:07:39.434Z</lastmod>
-  </url>
-  <url>
-    <loc>https://libbymckenna.github.io/sidestreams/about.html</loc>
-    <lastmod>2024-11-19T21:07:39.434Z</lastmod>
-  </url>
-  <url>
-    <loc>https://libbymckenna.github.io/sidestreams/sources.html</loc>
-    <lastmod>2024-11-19T21:07:39.438Z</lastmod>
-  </url>
-  <url>
-    <loc>https://libbymckenna.github.io/sidestreams/index.html</loc>
-    <lastmod>2024-11-19T21:07:39.434Z</lastmod>
+    <loc>https://libbymckenna.github.io/sidestreams/posts/chemdose-quiz/chemdose_quiz.html</loc>
+    <lastmod>2024-11-19T21:42:54.174Z</lastmod>
   </url>
   <url>
     <loc>https://libbymckenna.github.io/sidestreams/posts/intro-vignette/intro_post.html</loc>
-    <lastmod>2024-11-19T21:07:39.438Z</lastmod>
+    <lastmod>2024-11-19T21:42:54.174Z</lastmod>
+  </url>
+  <url>
+    <loc>https://libbymckenna.github.io/sidestreams/index.html</loc>
+    <lastmod>2024-11-19T21:42:54.174Z</lastmod>
+  </url>
+  <url>
+    <loc>https://libbymckenna.github.io/sidestreams/sources.html</loc>
+    <lastmod>2024-11-19T21:42:54.174Z</lastmod>
+  </url>
+  <url>
+    <loc>https://libbymckenna.github.io/sidestreams/about.html</loc>
+    <lastmod>2024-11-19T21:42:54.174Z</lastmod>
+  </url>
+  <url>
+    <loc>https://libbymckenna.github.io/sidestreams/posts/helpers-blend-vignette/blend_vignette.html</loc>
+    <lastmod>2024-11-19T21:42:54.174Z</lastmod>
+  </url>
+  <url>
+    <loc>https://libbymckenna.github.io/sidestreams/posts/haunted-water/haunted.html</loc>
+    <lastmod>2024-11-19T21:42:54.174Z</lastmod>
   </url>
 </urlset>

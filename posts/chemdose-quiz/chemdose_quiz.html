@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Libby McKenna">
+<meta name="dcterms.date" content="2024-11-19">
 
-<title>sidestreams</title>
+<title>Interactive Dashboard – sidestreams</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./tw_logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../tw_logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: [{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+      searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -129,7 +131,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -139,7 +141,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">sidestreams</span>
     </a>
   </div>
@@ -150,15 +152,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./sources.html"> 
+    <a class="nav-link" href="../../sources.html"> 
 <span class="menu-text">Sources</span></a>
   </li>  
 </ul>
@@ -171,172 +173,64 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">sidestreams</h1>
+    <div class="quarto-title column-body">
+      <h1 class="title">Interactive Dashboard</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Libby McKenna </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 19, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="blend_waters">blend_waters <span class="quarto-category-count">(1)</span></div><div class="category" data-category="helper functions">helper functions <span class="quarto-category-count">(1)</span></div><div class="category" data-category="intro">intro <span class="quarto-category-count">(1)</span></div><div class="category" data-category="toc">toc <span class="quarto-category-count">(1)</span></div><div class="category" data-category="treatment">treatment <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#interactive-visualization" id="toc-interactive-visualization" class="nav-link active" data-scroll-target="#interactive-visualization">Interactive Visualization</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<section id="interactive-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-visualization">Interactive Visualization</h2>
+<p>import { select } from “<span class="citation" data-cites="observablehq/inputs">@observablehq/inputs</span>”; import { Plot } from “<span class="citation" data-cites="observablehq/plot">@observablehq/plot</span>”;</p>
+<p>viewof x = select([“Sepal Length”, “Sepal Width”, “Petal Length”, “Petal Width”], { label: “X Variable” }); viewof y = select([“Sepal Length”, “Sepal Width”, “Petal Length”, “Petal Width”], { label: “Y Variable” });</p>
+<p>Plot.plot({ marks: [ Plot.dot(iris, { x: d =&gt; d[x], y: d =&gt; d[y], fill: “Species” }) ] })</p>
 
 
 
+</section>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="helper functions,blend_waters" data-listing-date-sort="1731974400000" data-listing-file-modified-sort="1732052574174" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1604">
-<div class="thumbnail">
-<p><a href="./posts/helpers-blend-vignette/blend_vignette.html" class="no-external"></a></p><a href="./posts/helpers-blend-vignette/blend_vignette.html" class="no-external">
-<p class="card-img-top"><img src="posts/helpers-blend-vignette/blend_vignette_files/figure-html/unnamed-chunk-3-1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/helpers-blend-vignette/blend_vignette.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/helpers-blend-vignette/blend_vignette.html" class="no-external">Built-in tidywater features you didn’t know you needed</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/helpers-blend-vignette/blend_vignette.html" class="no-external">How to apply tidywater’s helper functions to a data frame</a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('helper functions'); return false;">
-helper functions
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('blend_waters'); return false;">
-blend_waters
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/helpers-blend-vignette/blend_vignette.html" class="no-external">If you have a ton of water quality parameters already in a data frame format, it might be frustrating to manually type each of them into <code>define_water</code>. That’s where the…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/helpers-blend-vignette/blend_vignette.html" class="no-external">
-<div class="listing-date">
-Nov 19, 2024
-</div>
-<div class="listing-author">
-Libby McKenna
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1731974400000" data-listing-file-modified-sort="1732052574174" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="62">
-<div class="thumbnail">
-<p><a href="./posts/chemdose-quiz/chemdose_quiz.html" class="no-external"></a></p><a href="./posts/chemdose-quiz/chemdose_quiz.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/chemdose-quiz/chemdose_quiz.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/chemdose-quiz/chemdose_quiz.html" class="no-external">Interactive Dashboard</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/chemdose-quiz/chemdose_quiz.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/chemdose-quiz/chemdose_quiz.html" class="no-external">import { select } from “<span class="citation" data-cites="observablehq/inputs">@observablehq/inputs</span>”; import { Plot } from “<span class="citation" data-cites="observablehq/plot">@observablehq/plot</span>”;</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/chemdose-quiz/chemdose_quiz.html" class="no-external">
-<div class="listing-date">
-Nov 19, 2024
-</div>
-<div class="listing-author">
-Libby McKenna
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="toc,treatment" data-listing-date-sort="1731888000000" data-listing-file-modified-sort="1732052574174" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="914">
-<div class="thumbnail">
-<p><a href="./posts/haunted-water/haunted.html" class="no-external"></a></p><a href="./posts/haunted-water/haunted.html" class="no-external">
-<p><img loading="lazy" src="./posts/haunted-water/haunted_water.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/haunted-water/haunted.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/haunted-water/haunted.html" class="no-external">Three ways to find out if your water is haunted…</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/haunted-water/haunted.html" class="no-external">…by challenging organics</a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('toc'); return false;">
-toc
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('treatment'); return false;">
-treatment
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/haunted-water/haunted.html" class="no-external">Total organic carbon (TOC) is a bulk measurement that indicates the amount of organic matter in a water. However, properties of organic matter can vary widely. You may have…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/haunted-water/haunted.html" class="no-external">
-<div class="listing-date">
-Nov 18, 2024
-</div>
-<div class="listing-author">
-Sierra Johnson
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="intro" data-listing-date-sort="1730764800000" data-listing-file-modified-sort="1732052574174" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1397">
-<div class="thumbnail">
-<p><a href="./posts/intro-vignette/intro_post.html" class="no-external"></a></p><a href="./posts/intro-vignette/intro_post.html" class="no-external">
-<p><img loading="lazy" src="./posts/intro-vignette/intro_pic.png" class="thumbnail-image"></p>
-</a><p><a href="./posts/intro-vignette/intro_post.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/intro-vignette/intro_post.html" class="no-external">Introduction to tidywater</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/intro-vignette/intro_post.html" class="no-external">How to implement package models in your analysis.</a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('intro'); return false;">
-intro
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/intro-vignette/intro_post.html" class="no-external">The tidywater package can be installed like any other package on CRAN by simply running <code>install.packages("tidywater")</code>. For more details on the package, please see our public…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/intro-vignette/intro_post.html" class="no-external">
-<div class="listing-date">
-Nov 5, 2024
-</div>
-<div class="listing-author">
-Libby McKenna &amp; Riley Mulhern
-</div>
-</a>
-</div>
-</div>
+
 </div>
 <div class="listing-no-matching d-none">
 No matching items
