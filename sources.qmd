@@ -1,7 +1,8 @@
 ---
 title: "Sources"
-format: html
-editor: visual
+author: "Libby McKenna"
+date: "2024-11-19"
+categories: [welcome]
 ---
 
 Sidestreams and the tidywater package were made possible by the wonderful open-source tools created by the R community. We want to give credit where it's due and continue to foster collaboration and innovation.
