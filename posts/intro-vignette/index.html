@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Libby McKenna">
+<meta name="author" content="Libby McKenna &amp; Riley Mulhern">
 <meta name="dcterms.date" content="2024-11-05">
 
 <title>Introduction to tidywater – sidestreams</title>
@@ -218,7 +218,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Libby McKenna </p>
+               <p>Libby McKenna &amp; Riley Mulhern </p>
             </div>
     </div>
       
@@ -268,7 +268,7 @@ window.Quarto = {
 </div>
 <section id="defining-a-water" class="level2">
 <h2 class="anchored" data-anchor-id="defining-a-water">Defining a water</h2>
-<p>The first step for any modelling project using tidywater is to define your starting water quality. This can be done using the <code>define_water</code> function. This function allows you to input everything you know about your water (pH, alkalinity, temperature, etc.). It also standardizes units for subsequent modelling steps, calculates the carbonate balance from the alkalinity and pH (if provided), and estimates the ionic strength of the water from your inputs. The function then takes all this information and creates a unique object of class “water” (for more details, see <a href="https://adv-r.hadley.nz/s4.html"> R’s S4 class</a>).</p>
+<p>The first step for any modelling project using tidywater is to define your starting water quality using the <code>define_water</code> function. This function allows you to input everything you know about your water (pH, alkalinity, temperature, etc.). It also standardizes units for subsequent modelling steps, calculates the carbonate balance from the alkalinity and pH (if provided), and estimates the ionic strength of the water from your inputs. The function then takes all this information and creates a unique object of class “water” (for more details, see <a href="https://adv-r.hadley.nz/s4.html"> R’s S4 class</a>).</p>
 <p>The “water” class is the building block of tidywater and allows you to keep track of all the changes in your water through various water treatment processes in a tidy way. Think of the “water” class as a snapshot of everything that is known about a water at each step in a modelling process.</p>
 <p>Why does tidywater depend on this special class instead of just using a data frame? The water class is a good way to standardize inputs and set up a data structure that would reduce user error. Funneling users through <code>define_water</code> reduces naming errors in downstream functions. It also ensures that all slots have the proper data class. For example, <code>ph</code> must always be a number, and <code>treatment</code> is always a character.</p>
 <p>To start, let’s create a blank water class and call it <code>empty_water.</code></p>
