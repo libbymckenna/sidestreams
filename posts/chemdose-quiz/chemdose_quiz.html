@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -100,6 +134,8 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
+<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -220,9 +256,54 @@ window.Quarto = {
 
 <section id="interactive-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="interactive-visualization">Interactive Visualization</h2>
-<p>import { select } from “<span class="citation" data-cites="observablehq/inputs">@observablehq/inputs</span>”; import { Plot } from “<span class="citation" data-cites="observablehq/plot">@observablehq/plot</span>”;</p>
-<p>viewof x = select([“Sepal Length”, “Sepal Width”, “Petal Length”, “Petal Width”], { label: “X Variable” }); viewof y = select([“Sepal Length”, “Sepal Width”, “Petal Length”, “Petal Width”], { label: “Y Variable” });</p>
-<p>Plot.plot({ marks: [ Plot.dot(iris, { x: d =&gt; d[x], y: d =&gt; d[y], fill: “Species” }) ] })</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" data-startfrom="11" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 10;"><span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { select } <span class="im">from</span> <span class="st">"@observablehq/inputs"</span><span class="op">;</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Plot } <span class="im">from</span> <span class="st">"@observablehq/plot"</span><span class="op">;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>viewof x <span class="op">=</span> <span class="fu">select</span>([<span class="st">"Sepal Length"</span><span class="op">,</span> <span class="st">"Sepal Width"</span><span class="op">,</span> <span class="st">"Petal Length"</span><span class="op">,</span> <span class="st">"Petal Width"</span>]<span class="op">,</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"X Variable"</span> })<span class="op">;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>viewof y <span class="op">=</span> <span class="fu">select</span>([<span class="st">"Sepal Length"</span><span class="op">,</span> <span class="st">"Sepal Width"</span><span class="op">,</span> <span class="st">"Petal Length"</span><span class="op">,</span> <span class="st">"Petal Width"</span>]<span class="op">,</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Y Variable"</span> })<span class="op">;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(iris<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> d[x]<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> d <span class="kw">=&gt;</span> d[y]<span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"Species"</span> })</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
 
 
 
@@ -236,6 +317,17 @@ window.Quarto = {
 No matching items
 </div>
 </div></main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IHNlbGVjdCB9IGZyb20gXCJAb2JzZXJ2YWJsZWhxL2lucHV0c1wiO1xuaW1wb3J0IHsgUGxvdCB9IGZyb20gXCJAb2JzZXJ2YWJsZWhxL3Bsb3RcIjtcblxudmlld29mIHggPSBzZWxlY3QoW1wiU2VwYWwgTGVuZ3RoXCIsIFwiU2VwYWwgV2lkdGhcIiwgXCJQZXRhbCBMZW5ndGhcIiwgXCJQZXRhbCBXaWR0aFwiXSwgeyBsYWJlbDogXCJYIFZhcmlhYmxlXCIgfSk7XG52aWV3b2YgeSA9IHNlbGVjdChbXCJTZXBhbCBMZW5ndGhcIiwgXCJTZXBhbCBXaWR0aFwiLCBcIlBldGFsIExlbmd0aFwiLCBcIlBldGFsIFdpZHRoXCJdLCB7IGxhYmVsOiBcIlkgVmFyaWFibGVcIiB9KTtcblxuUGxvdC5wbG90KHtcbiAgbWFya3M6IFtcbiAgICBQbG90LmRvdChpcmlzLCB7IHg6IGQgPT4gZFt4XSwgeTogZCA9PiBkW3ldLCBmaWxsOiBcIlNwZWNpZXNcIiB9KVxuICBdXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCd4JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3knKSJ9XX0=
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../posts/chemdose-quiz";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "../..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

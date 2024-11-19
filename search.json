@@ -4,14 +4,14 @@
     "href": "posts/chemdose-quiz/chemdose_quiz.html",
     "title": "Interactive Dashboard",
     "section": "",
-    "text": "import { select } from “@observablehq/inputs”; import { Plot } from “@observablehq/plot”;\nviewof x = select([“Sepal Length”, “Sepal Width”, “Petal Length”, “Petal Width”], { label: “X Variable” }); viewof y = select([“Sepal Length”, “Sepal Width”, “Petal Length”, “Petal Width”], { label: “Y Variable” });\nPlot.plot({ marks: [ Plot.dot(iris, { x: d =&gt; d[x], y: d =&gt; d[y], fill: “Species” }) ] })"
+    "text": "import { select } from \"@observablehq/inputs\";\nimport { Plot } from \"@observablehq/plot\";\n\nviewof x = select([\"Sepal Length\", \"Sepal Width\", \"Petal Length\", \"Petal Width\"], { label: \"X Variable\" });\nviewof y = select([\"Sepal Length\", \"Sepal Width\", \"Petal Length\", \"Petal Width\"], { label: \"Y Variable\" });\n\nPlot.plot({\n  marks: [\n    Plot.dot(iris, { x: d =&gt; d[x], y: d =&gt; d[y], fill: \"Species\" })\n  ]\n})"
   },
   {
     "objectID": "posts/chemdose-quiz/chemdose_quiz.html#interactive-visualization",
     "href": "posts/chemdose-quiz/chemdose_quiz.html#interactive-visualization",
     "title": "Interactive Dashboard",
     "section": "",
-    "text": "import { select } from “@observablehq/inputs”; import { Plot } from “@observablehq/plot”;\nviewof x = select([“Sepal Length”, “Sepal Width”, “Petal Length”, “Petal Width”], { label: “X Variable” }); viewof y = select([“Sepal Length”, “Sepal Width”, “Petal Length”, “Petal Width”], { label: “Y Variable” });\nPlot.plot({ marks: [ Plot.dot(iris, { x: d =&gt; d[x], y: d =&gt; d[y], fill: “Species” }) ] })"
+    "text": "import { select } from \"@observablehq/inputs\";\nimport { Plot } from \"@observablehq/plot\";\n\nviewof x = select([\"Sepal Length\", \"Sepal Width\", \"Petal Length\", \"Petal Width\"], { label: \"X Variable\" });\nviewof y = select([\"Sepal Length\", \"Sepal Width\", \"Petal Length\", \"Petal Width\"], { label: \"Y Variable\" });\n\nPlot.plot({\n  marks: [\n    Plot.dot(iris, { x: d =&gt; d[x], y: d =&gt; d[y], fill: \"Species\" })\n  ]\n})"
   },
   {
     "objectID": "posts/intro-vignette/intro_post.html",
