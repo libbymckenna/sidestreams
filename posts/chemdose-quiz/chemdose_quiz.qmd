@@ -4,7 +4,9 @@ subtitle: "How to use tidywater's helper functions to model large data sets"
 author: "Libby McKenna"
 date: "2024-11-19"
 categories: [helper_functions, acid_base_equilibrium, chemdose_ph, solvedose_ph]
-format: revealjs
+format:
+  html:
+    toc: true
 filters:
   - naquiz
 ---
