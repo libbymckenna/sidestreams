@@ -46,7 +46,7 @@ function checkAnswer() {
   } else if (answer >= 6 && answer <= 8) {
     feedback.innerHTML = "You have a fairly balanced personality that people love to drink up. Use chemdose_ph to see how adding a new chemical to your life will affect your pH. Be careful - you don't want to throw off your current balance!";
   } else if (answer >= 9 && answer <= 14) {
-    feedback.innerHTML = "Ya basic! Let's drop that tone down that personality pH. Use solvedose_ph to find how much chemical is required to move you from a Starbucks regular to a local cafe champion.";
+    feedback.innerHTML = "Ya basic! Let's tone down that personality pH. Use solvedose_ph to find how much chemical is required to move you from a Starbucks regular to a local cafe champion.";
   } else {
     feedback.innerHTML = "Please enter a valid number between 1 and 14.";
   }
