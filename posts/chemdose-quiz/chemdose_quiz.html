@@ -212,10 +212,11 @@ window.Quarto = {
       <h1 class="title">This quiz will tell you your chemical dosing personality type</h1>
             <p class="subtitle lead">How to use tidywater’s helper functions to model large data sets</p>
                                 <div class="quarto-categories">
-                <div class="quarto-category">helper_functions</div>
-                <div class="quarto-category">acid_base_equilibrium</div>
+                <div class="quarto-category">helper functions</div>
+                <div class="quarto-category">acid base equilibrium</div>
                 <div class="quarto-category">chemdose_ph</div>
                 <div class="quarto-category">solvedose_ph</div>
+                <div class="quarto-category">quiz</div>
               </div>
                   </div>
   </div>
@@ -275,7 +276,7 @@ window.Quarto = {
 <section id="quiz" class="level3">
 <h3 class="anchored" data-anchor-id="quiz">Quiz</h3>
 <div class="question">
-<p>On a scale of 1-14, how extroverted are you? 1 = I’m a solo proton type of gal, 14 = OH OH OH I LOVE PEOPLE <input type="number" id="extroversion" min="1" max="14"> <button onclick="checkAnswer()">Submit</button></p>
+<p>On a scale of 1-14, how extroverted are you? 1 = I’m a solo proton type of gal, 14 = OH! I love a good crowd <input type="number" id="extroversion" min="1" max="14"> <button onclick="checkAnswer()">Submit</button></p>
 </div>
 <div id="feedback">
 
@@ -285,22 +286,23 @@ function checkAnswer() {
   var answer = document.getElementById("extroversion").value;
   var feedback = document.getElementById("feedback");
   if (answer >= 1 && answer <= 5) {
-    feedback.innerHTML = "You're a very positive person, but sooo acidic. Let's add some alkalinity! Check out solvedose_alk to figure out how much chemical to add to reach a new alkalinity. New carbonate balance, new you.";
+    feedback.innerHTML = "You're a very positive person, but sooo acidic. Time for an alkaline make over! Check out solvedose_alk to figure out how much chemical to add to your life to reach a new alkalinity. New carbonate balance, new you.";
   } else if (answer >= 6 && answer <= 8) {
-    feedback.innerHTML = "So neutral, time for a makeover up with some chemical addition. Use chemdose_ph to see your new pH after adding a chemical. Choose your chemical wisely!";
+    feedback.innerHTML = "You have a fairly balanced personality that people love to drink up. Use chemdose_ph to see how adding a new chemical to your life will affect your pH. Be careful - you don't want to throw off your current balance!";
   } else if (answer >= 9 && answer <= 14) {
-    feedback.innerHTML = "Ya basic! Let's drop that pH. Use solvedose_ph to find how much chemical is required to move you from a Starbucks regular to a local cafe champion.";
+    feedback.innerHTML = "Ya basic! Let's drop that tone down that personality pH. Use solvedose_ph to find how much chemical is required to move you from a Starbucks regular to a local cafe champion.";
   } else {
     feedback.innerHTML = "Please enter a valid number between 1 and 14.";
   }
 }
 </script>
 <p>:::::</p>
-<p>This post assumes a basic understanding of <code>define_water</code>, the S4 <code>water</code> class, and helper functions. See <code>vignette("intro", package = "tidywater")</code> and <code>vignette("help_functions_blend", package = "tidywater")</code> for more information.</p>
+<p>Note - this is only talking about dosing chemicals into water at water treatment facilities. We are not suggesting you literally add chemicals to your human body or that pH is somehow associated with your personality.</p>
 </section>
 </section>
 <section id="chemical-dosing-setup" class="level2">
 <h2 class="anchored" data-anchor-id="chemical-dosing-setup">Chemical Dosing Setup</h2>
+<p>This post assumes a basic understanding of <code>define_water</code>, the S4 <code>water</code> class, and helper functions. See <code>vignette("intro", package = "tidywater")</code> and <code>vignette("help_functions_blend", package = "tidywater")</code> for more information.</p>
 <p>To showcase tidywater’s acid-base equilibrium functions, let’s use a common water treatment problem. In this analysis, a hypothetical drinking water utility wants to know how much their pH will be impacted by varying doses of alum. They also want to ensure that their finished water has a pH of 8.</p>
 <p>We can create a quick model by manually inputting the utility’s typical water quality. Then we’ll dose the water with their typical alum dose of 30 mg/L, and then a proposed 20 mg/L dose. Finally, we’ll see how much caustic is required to raise the pH back to 8.</p>
 <div class="cell">
